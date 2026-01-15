@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BU Landingpage – Ingenieure & Architekten</title>
+
+  <style>
+    :root{
+      --page:#f6f7f6;
+      --page2:#ffffff;
+      --surface:#ffffff;
+      --surface2:#f1f4f2;
+      --panel:#dff1e4;
+
+      --text:#132018;
+      --muted:#54665c;
+      --line:rgba(0,0,0,.10);
+
+      --brand:#0f7b3d;
+      --brand2:#22a85b;
+      --brand3:#0b5e2f;
+
+      --shadow:0 14px 30px rgba(0,0,0,.08);
+      --radius:18px;
+      --max:1100px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      color:var(--text);
+      background:
+        radial-gradient(900px 520px at 10% 0%, rgba(34,168,91,.10), transparent 60%),
+        radial-gradient(900px 520px at 90% 10%, rgba(15,123,61,.08), transparent 55%),
+        linear-gradient(180deg, var(--page), var(--page2));
+      line-height:1.5;
+    }
+    .wrap{max-width:var(--max); margin:auto; padding:18px 16px 70px;}
+
+    header{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:16px;
+      box-shadow:var(--shadow);
+      padding: 12px 14px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .logo{
+      display:flex; align-items:center; gap:10px;
+      font-weight:950;
+    }
+    .logo img{
+  width:90px;          /* größer */
+  height:48px;         /* proportional */
+  object-fit:contain;
+  display:block;
+  background:#fff;
+  border-radius:8px;
+  border:1px solid var(--line);
+  padding:6px;
+}
+
+    .logo small{display:block; color:var(--muted); font-weight:700}
+    .topCta{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+      color:var(--muted);
+      font-weight:700;
+      font-size:13px;
+    }
+    .topCta a{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(15,123,61,.25);
+      background: rgba(15,123,61,.06);
+      color: var(--brand3);
+      text-decoration:none;
+      font-weight:900;
+    }
+    .topCta a:hover{background: rgba(15,123,61,.10);}
+
+    .hero{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:14px;
+      align-items:stretch;
+    }
+    @media (max-width: 980px){
+      .hero{grid-template-columns:1fr;}
+    }
+
+    .card{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .heroLeft{padding:22px;}
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 12px;
+      border-radius:999px;
+      background: rgba(15,123,61,.08);
+      border:1px solid rgba(15,123,61,.22);
+      color: var(--brand3);
+      font-weight:900;
+      font-size:13px;
+      margin-bottom:10px;
+    }
+    h1{margin:0 0 10px; font-size:34px; line-height:1.12;}
+    .sub{margin:0 0 14px; color:var(--muted); font-size:16px;}
+
+    ul{padding:0; margin:0; list-style:none; display:grid; gap:10px;}
+    li{display:flex; gap:10px; align-items:flex-start;}
+    .tick{
+      width:22px; height:22px;
+      border-radius:8px;
+      background: rgba(34,168,91,.12);
+      border:1px solid rgba(34,168,91,.30);
+      display:flex; align-items:center; justify-content:center;
+      color: var(--brand3);
+      font-weight:950;
+      flex:0 0 auto;
+      margin-top:2px;
+    }
+
+    .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 16px;
+      border-radius:12px;
+      border:1px solid rgba(0,0,0,.12);
+      background: linear-gradient(180deg, var(--brand2), var(--brand));
+      color:#fff;
+      font-weight:950;
+      text-decoration:none;
+      box-shadow: 0 10px 20px rgba(15,123,61,.16);
+      cursor:pointer;
+    }
+    .btn.secondary{
+      background: var(--surface2);
+      color: var(--text);
+      box-shadow:none;
+    }
+
+    .heroRight{display:grid; gap:14px;}
+    .imgBox{
+      min-height: 220px;
+      border:1px solid rgba(15,123,61,.25);
+      border-radius: var(--radius);
+      overflow:hidden;
+      background: var(--surface2);
+    }
+    .imgBox img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .panel{
+      background: var(--panel);
+      border:1px solid rgba(15,123,61,.22);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 16px;
+    }
+    .panel b{font-size:18px; display:block; margin-bottom:4px;}
+    .panel p{margin:0; color: color-mix(in srgb, var(--text) 70%, #000 30%); font-weight:650;}
+    .panel a{
+      display:inline-flex;
+      margin-top:10px;
+      color: var(--brand3);
+      font-weight:950;
+      text-decoration:none;
+    }
+    .panel a:hover{text-decoration:underline;}
+
+    .formWrap{margin-top:14px;}
+    .formCard{padding:18px;}
+    .formTitle{display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap;}
+    .formTitle b{font-size:18px;}
+    .formTitle span{color:var(--muted); font-weight:650; font-size:13px;}
+    form{display:grid; gap:12px; margin-top:12px;}
+    label{font-weight:900; font-size:13px;}
+    input, select, textarea{
+      width:100%;
+      padding:12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background: var(--surface2);
+      color: var(--text);
+      outline:none;
+    }
+    input:focus, select:focus, textarea:focus{
+      border-color: rgba(15,123,61,.45);
+      box-shadow: 0 0 0 4px rgba(34,168,91,.10);
+      background:#fff;
+    }
+    .row{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+    @media (max-width:700px){ .row{grid-template-columns:1fr;} }
+
+    .consent{
+      display:flex; gap:10px; align-items:flex-start;
+      color:var(--muted);
+      font-weight:650;
+      font-size:13px;
+    }
+    .consent input{width:auto; margin-top:3px;}
+    .fineprint{color:var(--muted); font-size:12px; margin-top:4px;}
+
+    footer{
+      margin-top: 18px;
+      text-align:center;
+      color:var(--muted);
+      font-size:12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header>
+      <div class="logo">
+        <img src="assets/logo.png" alt="Logo">
+        <div>
+          <div>HDI Hauptvertretung <span style="font-weight:950;">Farshid Tehrani</span></div>
+          <small>Köln/Bonn · Ingenieure & Architekten · Berufsunfähigkeit (BU)</small>
+        </div>
+      </div>
+      <div class="topCta">
+        <span>📞 <a href="tel:+4915566518738" style="color:var(--text);text-decoration:none;font-weight:950;">0155 665 18 738</a></span>
+        <a href="#formular">BU-Vergleich anfragen →</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="card heroLeft">
+        <div class="badge">Kostenlos · 10–15 Minuten · Köln/Bonn/NRW</div>
+
+        <h1>BU schützt Ihr Einkommen – speziell für Ingenieure & Architekten</h1>
+        <p class="sub">
+          Kostenloser BU-Vergleich: verständlich erklärt, auf Ihren Beruf abgestimmt – ohne Verpflichtung.
+        </p>
+
+        <ul>
+          <li><span class="tick">✓</span><span>Welche BU-Rente ist sinnvoll? (realistisch & passend)</span></li>
+          <li><span class="tick">✓</span><span>Wichtige BU-Klauseln einfach erklärt (ohne Fachchinesisch)</span></li>
+          <li><span class="tick">✓</span><span>Vergleich von Optionen – klare Empfehlung statt Zettelchaos</span></li>
+          <li><span class="tick">✓</span><span>Optional: Ersteinschätzung zur Gesundheitsprüfung (nicht im Formular)</span></li>
+        </ul>
+
+        <div class="ctaRow">
+          <a class="btn" href="#formular">Kostenlosen BU-Vergleich starten</a>
+          <a class="btn secondary" href="#ablauf">So läuft’s ab</a>
+        </div>
+
+        <div class="fineprint">Hinweis: Keine Abschlussverpflichtung. Erstmal Klarheit & Orientierung.</div>
+      </div>
+
+      <div class="heroRight">
+        <div class="imgBox">
+          <img src="assets/hero.jpg" alt="Ingenieur / Architekt im Büro">
+        </div>
+
+        <div class="panel">
+          <b>Wir sind für Sie da!</b>
+          <p>Unverbindlich anfragen – wir melden uns zeitnah für eine kurze BU-Ersteinschätzung.</p>
+          <a href="#formular">Jetzt BU-Vergleich starten →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="formWrap" id="ablauf">
+      <div class="card formCard">
+        <div class="formTitle">
+          <b>So läuft’s ab</b>
+          <span>klar & schnell</span>
+        </div>
+        <div style="display:grid;gap:10px;margin-top:12px;color:var(--muted);font-weight:650;">
+          <div><b style="color:var(--text)">1) Anfrage</b> – kurze Kontaktdaten (unter 30 Sekunden)</div>
+          <div><b style="color:var(--text)">2) Kurzgespräch</b> – 10–15 Minuten, verständlich & strukturiert</div>
+          <div><b style="color:var(--text)">3) Vergleich</b> – klare Empfehlung + nächste Schritte (wenn Sie möchten)</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="formWrap" id="formular">
+      <div class="card formCard">
+        <div class="formTitle">
+          <b>BU-Vergleich anfragen</b>
+          <span>DSGVO-konform · Rückmeldung zeitnah</span>
+        </div>
+
+        <!-- Redirect nach Absenden -->
+        <form action="https://formspree.io/f/xkogldbd?_redirect=https://deinedomain.de/danke.html" method="POST">
+
+          <input type="hidden" name="landingpage" value="LP02 – BU Ingenieure & Architekten">
+	  <input type="hidden" name="zielgruppe" value="Ingenieure & Architekten">
+          <input type="hidden" name="anfrage" value="BU-Vergleich">
+          <input type="hidden" name="_subject" value="LP02 Ingenieure & Architekten | BU-Vergleich">
+
+
+          <div class="row">
+            <div>
+              <label>Name*</label>
+              <input name="name" required placeholder="Max Mustermann" />
+            </div>
+            <div>
+              <label>Telefon*</label>
+              <input name="phone" required placeholder="+49 …" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label>E-Mail*</label>
+              <input name="email" type="email" required placeholder="name@mail.de" />
+            </div>
+            <div>
+              <label>Beruf*</label>
+              <select name="profession" required>
+                <option value="" selected disabled>Bitte auswählen</option>
+                <option value="Ingenieur">Ingenieur</option>
+                <option value="Architekt">Architekt</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="consent">
+            <input name="consent" type="checkbox" required />
+            <div>
+              Ich willige ein, dass meine Angaben zur Kontaktaufnahme verarbeitet werden.
+              <span style="font-weight:900; color:var(--brand3);">Datenschutzerklärung</span> gelesen.*
+            </div>
+          </div>
+
+          <button class="btn" type="submit">BU-Anfrage absenden</button>
+
+          <div class="fineprint">
+            Transparenzhinweis: Tätigkeit als Versicherungsvertreter gemäß §34d GewO · HDI-Hauptvertretung.
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="formWrap">
+      <div class="card formCard">
+        <div class="formTitle">
+          <b>Kontakt</b>
+          <span>Köln/Bonn · NRW</span>
+        </div>
+
+        <div style="display:grid;gap:8px;margin-top:12px;color:var(--muted);font-weight:650;">
+          <div><b style="color:var(--text)">HDI Hauptvertretung Farshid Tehrani</b></div>
+          <div>Adresse: St. Augustiner Str. 133, 53225 Bonn Beuel</div>
+          <div>Telefon: <a href="tel:+4915566518738" style="color:var(--brand3);font-weight:900;text-decoration:none;">0155 665 18 738</a></div>
+          <div>E-Mail: <a href="mailto:farshid.tehrani@hdi.de" style="color:var(--brand3);font-weight:900;text-decoration:none;">farshid.tehrani@hdi.de</a></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Fokus: Berufsunfähigkeit (BU) für Ingenieure & Architekten · 1 Angebot → 1 Formular.
+    </footer>
+
+  </div>
+</body>
+</html>

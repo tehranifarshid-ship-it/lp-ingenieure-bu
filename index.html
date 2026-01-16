@@ -306,17 +306,12 @@
         </div>
 
         <!-- Redirect nach Absenden -->
-       <form action="https://formspree.io/f/xkogldbd" method="POST">
-  <input type="hidden" name="_redirect" value="https://tehranifarshid-ship-it.github.io/lp-ingenieure-bu/danke-bu.html" />
+        <form action="https://bu-form-ing-arch.tehrani-farshid.workers.dev/submit" method="POST">
 
-  <input type="hidden" name="landingpage" value="LP02 – BU Ingenieure & Architekten" />
-  <input type="hidden" name="zielgruppe" value="Ingenieure & Architekten" />
-  <input type="hidden" name="anfrage" value="BU-Vergleich" />
-  <input type="hidden" name="_subject" value="LP02 Ingenieure & Architekten | BU-Vergleich" />
-
-  ...
-</form>
-
+          <input type="hidden" name="landingpage" value="LP02 – BU Ingenieure & Architekten">
+	  <input type="hidden" name="zielgruppe" value="Ingenieure & Architekten">
+          <input type="hidden" name="anfrage" value="BU-Vergleich">
+          <input type="hidden" name="_subject" value="LP02 Ingenieure & Architekten | BU-Vergleich">
 
 
           <div class="row">
@@ -345,17 +340,13 @@
             </div>
           </div>
 
-        <div class="consent">
-          <label style="display:flex; gap:10px; cursor:pointer;">
+          <div class="consent">
             <input name="consent" type="checkbox" required />
-            <span>
-      Ich willige ein, dass meine Angaben zur Kontaktaufnahme verarbeitet werden.
-      <span style="font-weight:900; color:var(--brand3);">Datenschutzerklärung</span> gelesen.*
-    </span>
-  </label>
-</div>
-
-
+            <div>
+              Ich willige ein, dass meine Angaben zur Kontaktaufnahme verarbeitet werden.
+              <span style="font-weight:900; color:var(--brand3);">Datenschutzerklärung</span> gelesen.*
+            </div>
+          </div>
 
           <button class="btn" type="submit">BU-Anfrage absenden</button>
 
@@ -388,8 +379,8 @@
 
   </div>
 </body>
-
 </html>
+
 
 
 
